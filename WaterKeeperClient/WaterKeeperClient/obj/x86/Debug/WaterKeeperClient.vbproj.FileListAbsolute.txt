@@ -7,6 +7,10 @@ C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeper
 C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeperClient\obj\x86\Debug\WaterKeeperClient.exe
 C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeperClient\obj\x86\Debug\WaterKeeperClient.xml
 C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeperClient\obj\x86\Debug\WaterKeeperClient.pdb
-C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeperClient\obj\x86\Debug\WaterKeeperClient.Frm_TelefonosCliente.resources
 C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeperClient\obj\x86\Debug\WaterKeeperClient.Frm_Main.resources
-C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeperClient\obj\x86\Debug\WaterKeeperClient.Frm_Clientes.resources
+C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeperClient\obj\x86\Debug\WaterKeeperClient.Frm_Sectores.resources
+C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeperClient\obj\x86\Debug\WaterKeeperClient.Frm_Accionistas.resources
+C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeperClient\obj\x86\Debug\WaterKeeperClient.Frm_TelefonosAccionista.resources
+C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeperClient\obj\x86\Debug\WaterKeeperClient.Frm_Compuertas.resources
+C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeperClient\obj\x86\Debug\WaterKeeperClient.Frm_AddModAccionista.resources
+C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeperClient\bin\Debug\WaterKeeperClient.exe.config
