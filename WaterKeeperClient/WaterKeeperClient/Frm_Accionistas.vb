@@ -2,9 +2,7 @@
 Public Class Frm_Accionistas
     Dim DataAdLlenaAccionistas As New MySqlDataAdapter
     Dim DataSetLlenado As New DataSet
-    Private Sub Label4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label4.Click
-
-    End Sub
+    Dim BS_Accionistas As New BindingSource
 
     Private Sub Frm_Accionistas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         DGVAccionistas.AllowUserToAddRows = False
@@ -44,6 +42,10 @@ Public Class Frm_Accionistas
         DataSetLlenado.Tables("ACCIONISTAS").Columns.Add("APELLIDOM_ACCIONISTA")
         DataSetLlenado.Tables("ACCIONISTAS").Columns.Add("DIRECCION_ACCIONISTA")
 
+        BS_Accionistas.DataSource = DataSetLlenado.Tables("ACCIONISTAS")
+        BS_Accionistas.Sort = "RUT_ACCIONISTA"
+
+        DGVAccionistas.DataSource = BS_Accionistas
         LlenaData()
     End Sub
 
@@ -60,12 +62,30 @@ Public Class Frm_Accionistas
         DataAdLlenaAccionistas.SelectCommand = CmdSelectAccionistas
 
         DataAdLlenaAccionistas.Fill(DataSetLlenado, "ACCIONISTAS")
-        DGVAccionistas.DataSource = DataSetLlenado.Tables("ACCIONISTAS")
     End Sub
 
     Private Sub Btn_AddAccionista_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_AddAccionista.Click
         Dim Dlgr_AddAccionista As DialogResult
-        Dim DR_TAccionista As DataRow = DataSetLlenado.Tables("ACCIONISTAS").NewRow
+        DataSetLlenado.Tables("ACCIONISTAS").Rows.Add()
+        BS_Accionistas.Position = BS_Accionistas.Find("RUT_ACCIONISTA", vbNull)
+
+        Frm_AddModAccionista.BS_RAccionistas = BS_Accionistas
+
+        Dlgr_AddAccionista = Frm_AddModAccionista.ShowDialog()
+
+        If Dlgr_AddAccionista = Windows.Forms.DialogResult.OK Then
+
+        Else
+            DataSetLlenado.Tables("ACCIONISTAS").RejectChanges()
+        End If
+
+        Frm_AddModAccionista.Dispose()
+    End Sub
+
+    Private Sub DGVAccionistas_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGVAccionistas.CellContentClick
+        Dim Dlgr_AddAccionista As DialogResult
+
+        Frm_AddModAccionista.BS_RAccionistas = BS_Accionistas
 
         Dlgr_AddAccionista = Frm_AddModAccionista.ShowDialog()
 
@@ -74,6 +94,11 @@ Public Class Frm_Accionistas
         Else
 
         End If
+
+        Frm_AddModAccionista.Dispose()
     End Sub
 
+    Private Sub Btn_Close_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Close.Click
+        Me.Close()
+    End Sub
 End Class

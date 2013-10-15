@@ -23,15 +23,15 @@ Partial Class Frm_AddModAccionista
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Txt_DireccionAccionista = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Txt_ApellidoMAccionista = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Txt_ApellidoPAccionista = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Txt_NombreAccionista = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Txt_RutAccionista = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Btn_Close = New System.Windows.Forms.Button()
         Me.Btn_Aplicar = New System.Windows.Forms.Button()
@@ -43,33 +43,32 @@ Partial Class Frm_AddModAccionista
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.TextBox5)
+        Me.GroupBox1.Controls.Add(Me.Txt_DireccionAccionista)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.TextBox4)
+        Me.GroupBox1.Controls.Add(Me.Txt_ApellidoMAccionista)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
+        Me.GroupBox1.Controls.Add(Me.Txt_ApellidoPAccionista)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.Txt_NombreAccionista)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.Txt_RutAccionista)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(259, 264)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "GroupBox1"
         '
-        'TextBox5
+        'Txt_DireccionAccionista
         '
-        Me.TextBox5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.Txt_DireccionAccionista.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox5.Location = New System.Drawing.Point(9, 154)
-        Me.TextBox5.Multiline = True
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(238, 98)
-        Me.TextBox5.TabIndex = 9
+        Me.Txt_DireccionAccionista.Location = New System.Drawing.Point(9, 154)
+        Me.Txt_DireccionAccionista.Multiline = True
+        Me.Txt_DireccionAccionista.Name = "Txt_DireccionAccionista"
+        Me.Txt_DireccionAccionista.Size = New System.Drawing.Size(238, 98)
+        Me.Txt_DireccionAccionista.TabIndex = 9
         '
         'Label5
         '
@@ -80,14 +79,14 @@ Partial Class Frm_AddModAccionista
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Dirección"
         '
-        'TextBox4
+        'Txt_ApellidoMAccionista
         '
-        Me.TextBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Txt_ApellidoMAccionista.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox4.Location = New System.Drawing.Point(98, 105)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox4.TabIndex = 7
+        Me.Txt_ApellidoMAccionista.Location = New System.Drawing.Point(98, 105)
+        Me.Txt_ApellidoMAccionista.Name = "Txt_ApellidoMAccionista"
+        Me.Txt_ApellidoMAccionista.Size = New System.Drawing.Size(149, 20)
+        Me.Txt_ApellidoMAccionista.TabIndex = 7
         '
         'Label4
         '
@@ -98,14 +97,14 @@ Partial Class Frm_AddModAccionista
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Apellido Materno"
         '
-        'TextBox3
+        'Txt_ApellidoPAccionista
         '
-        Me.TextBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Txt_ApellidoPAccionista.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox3.Location = New System.Drawing.Point(98, 79)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox3.TabIndex = 5
+        Me.Txt_ApellidoPAccionista.Location = New System.Drawing.Point(98, 79)
+        Me.Txt_ApellidoPAccionista.Name = "Txt_ApellidoPAccionista"
+        Me.Txt_ApellidoPAccionista.Size = New System.Drawing.Size(149, 20)
+        Me.Txt_ApellidoPAccionista.TabIndex = 5
         '
         'Label3
         '
@@ -116,14 +115,14 @@ Partial Class Frm_AddModAccionista
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Apellido Paterno"
         '
-        'TextBox2
+        'Txt_NombreAccionista
         '
-        Me.TextBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Txt_NombreAccionista.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox2.Location = New System.Drawing.Point(98, 53)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox2.TabIndex = 3
+        Me.Txt_NombreAccionista.Location = New System.Drawing.Point(98, 53)
+        Me.Txt_NombreAccionista.Name = "Txt_NombreAccionista"
+        Me.Txt_NombreAccionista.Size = New System.Drawing.Size(149, 20)
+        Me.Txt_NombreAccionista.TabIndex = 3
         '
         'Label2
         '
@@ -134,14 +133,14 @@ Partial Class Frm_AddModAccionista
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Nombre:"
         '
-        'TextBox1
+        'Txt_RutAccionista
         '
-        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Txt_RutAccionista.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.Location = New System.Drawing.Point(98, 27)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox1.TabIndex = 1
+        Me.Txt_RutAccionista.Location = New System.Drawing.Point(98, 27)
+        Me.Txt_RutAccionista.Name = "Txt_RutAccionista"
+        Me.Txt_RutAccionista.Size = New System.Drawing.Size(149, 20)
+        Me.Txt_RutAccionista.TabIndex = 1
         '
         'Label1
         '
@@ -155,6 +154,7 @@ Partial Class Frm_AddModAccionista
         'Btn_Close
         '
         Me.Btn_Close.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Btn_Close.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Btn_Close.Location = New System.Drawing.Point(196, 284)
         Me.Btn_Close.Name = "Btn_Close"
         Me.Btn_Close.Size = New System.Drawing.Size(75, 23)
@@ -165,6 +165,7 @@ Partial Class Frm_AddModAccionista
         'Btn_Aplicar
         '
         Me.Btn_Aplicar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Btn_Aplicar.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Btn_Aplicar.Location = New System.Drawing.Point(115, 284)
         Me.Btn_Aplicar.Name = "Btn_Aplicar"
         Me.Btn_Aplicar.Size = New System.Drawing.Size(75, 23)
@@ -193,14 +194,14 @@ Partial Class Frm_AddModAccionista
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Btn_Close As System.Windows.Forms.Button
     Friend WithEvents Btn_Aplicar As System.Windows.Forms.Button
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents Txt_DireccionAccionista As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents Txt_ApellidoMAccionista As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents Txt_ApellidoPAccionista As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents Txt_NombreAccionista As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Txt_RutAccionista As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

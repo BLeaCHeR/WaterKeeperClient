@@ -26,11 +26,11 @@ Partial Class Frm_Accionistas
         Me.DGVAccionistas = New System.Windows.Forms.DataGridView()
         Me.Btn_Close = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Btn_AddAccionista = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.txt_NombreAct = New System.Windows.Forms.TextBox()
+        Me.Btn_AddAccionista = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
@@ -58,6 +58,7 @@ Partial Class Frm_Accionistas
         Me.DGVAccionistas.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGVAccionistas.Location = New System.Drawing.Point(3, 16)
         Me.DGVAccionistas.Name = "DGVAccionistas"
+        Me.DGVAccionistas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVAccionistas.Size = New System.Drawing.Size(567, 215)
         Me.DGVAccionistas.TabIndex = 2
         '
@@ -85,46 +86,51 @@ Partial Class Frm_Accionistas
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         '
-        'Btn_AddAccionista
-        '
-        Me.Btn_AddAccionista.Location = New System.Drawing.Point(6, 30)
-        Me.Btn_AddAccionista.Name = "Btn_AddAccionista"
-        Me.Btn_AddAccionista.Size = New System.Drawing.Size(31, 23)
-        Me.Btn_AddAccionista.TabIndex = 12
-        Me.Btn_AddAccionista.Text = "+"
-        Me.Btn_AddAccionista.UseVisualStyleBackColor = True
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(109, 16)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(105, 16)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(44, 13)
+        Me.Label4.Size = New System.Drawing.Size(65, 20)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Nombre"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 16)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(0, 16)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(24, 13)
+        Me.Label1.Size = New System.Drawing.Size(35, 20)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Rut"
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(112, 32)
+        Me.TextBox2.Location = New System.Drawing.Point(109, 39)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(91, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(160, 20)
         Me.TextBox2.TabIndex = 3
         '
         'txt_NombreAct
         '
-        Me.txt_NombreAct.Location = New System.Drawing.Point(3, 32)
+        Me.txt_NombreAct.Location = New System.Drawing.Point(3, 39)
         Me.txt_NombreAct.Name = "txt_NombreAct"
         Me.txt_NombreAct.Size = New System.Drawing.Size(100, 20)
         Me.txt_NombreAct.TabIndex = 3
+        '
+        'Btn_AddAccionista
+        '
+        Me.Btn_AddAccionista.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_AddAccionista.Image = Global.WaterKeeperClient.My.Resources.Resources.Nuevo
+        Me.Btn_AddAccionista.Location = New System.Drawing.Point(6, 16)
+        Me.Btn_AddAccionista.Name = "Btn_AddAccionista"
+        Me.Btn_AddAccionista.Size = New System.Drawing.Size(120, 37)
+        Me.Btn_AddAccionista.TabIndex = 12
+        Me.Btn_AddAccionista.Text = "Agregar"
+        Me.Btn_AddAccionista.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Btn_AddAccionista.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -136,14 +142,15 @@ Partial Class Frm_Accionistas
         Me.GroupBox3.Size = New System.Drawing.Size(292, 65)
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "GroupBox3"
+        Me.GroupBox3.Text = "Operaciones"
         '
         'Chk_Eliminar
         '
         Me.Chk_Eliminar.AutoSize = True
-        Me.Chk_Eliminar.Location = New System.Drawing.Point(43, 34)
+        Me.Chk_Eliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Chk_Eliminar.Location = New System.Drawing.Point(132, 21)
         Me.Chk_Eliminar.Name = "Chk_Eliminar"
-        Me.Chk_Eliminar.Size = New System.Drawing.Size(62, 17)
+        Me.Chk_Eliminar.Size = New System.Drawing.Size(97, 28)
         Me.Chk_Eliminar.TabIndex = 13
         Me.Chk_Eliminar.Text = "Eliminar"
         Me.Chk_Eliminar.UseVisualStyleBackColor = True
@@ -159,6 +166,7 @@ Partial Class Frm_Accionistas
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Frm_Accionistas"
         Me.Text = "Frm_Accionistas"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.DGVAccionistas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
