@@ -100,6 +100,12 @@
     <Compile Include="Frm_Compuertas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frm_Main.Designer.vb">
+      <DependentUpon>Frm_Main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Sectores.Designer.vb">
       <DependentUpon>Frm_Sectores.vb</DependentUpon>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Compuertas.resx">
       <DependentUpon>Frm_Compuertas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Main.resx">
+      <DependentUpon>Frm_Main.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Sectores.resx">
       <DependentUpon>Frm_Sectores.vb</DependentUpon>

@@ -15,6 +15,16 @@ Public Class Frm_Accionistas
         DGVAccionistas.Columns.Add("APELLIDOM_ACCIONISTA", "APELLIDO MATERNO")
         DGVAccionistas.Columns.Add("DIRECCION_ACCIONISTA", "DIRECCION")
 
+        ' Add a button column.  
+        Dim DGVBTC_Eliminar As New DataGridViewButtonColumn()
+        DGVBTC_Eliminar.HeaderText = ""
+        DGVBTC_Eliminar.Name = "BCEliminar"
+        DGVBTC_Eliminar.Text = "Eliminar"
+        DGVBTC_Eliminar.Visible = False
+        DGVBTC_Eliminar.UseColumnTextForButtonValue = True
+
+        DGVAccionistas.Columns.Add(DGVBTC_Eliminar)
+
         DGVAccionistas.Columns("ID_ACCIONISTA").DataPropertyName = "ID_ACCIONISTA"
         DGVAccionistas.Columns("ID_ACCIONISTA").ReadOnly = True
         DGVAccionistas.Columns("ID_ACCIONISTA").Visible = True
@@ -66,6 +76,7 @@ Public Class Frm_Accionistas
 
     Private Sub Btn_AddAccionista_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_AddAccionista.Click
         Dim Dlgr_AddAccionista As DialogResult
+
         DataSetLlenado.Tables("ACCIONISTAS").Rows.Add()
         BS_Accionistas.Position = BS_Accionistas.Find("RUT_ACCIONISTA", vbNull)
 
@@ -82,23 +93,91 @@ Public Class Frm_Accionistas
         Frm_AddModAccionista.Dispose()
     End Sub
 
-    Private Sub DGVAccionistas_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGVAccionistas.CellContentClick
+    Private Sub DGVAccionistas_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGVAccionistas.CellContentClick
         Dim Dlgr_AddAccionista As DialogResult
-
-        Frm_AddModAccionista.BS_RAccionistas = BS_Accionistas
-
-        Dlgr_AddAccionista = Frm_AddModAccionista.ShowDialog()
-
-        If Dlgr_AddAccionista = Windows.Forms.DialogResult.OK Then
-
+        If DGVAccionistas.Columns(e.ColumnIndex).Name = "BCEliminar" Then
+            Dim Dlgr_DeleteAccionista As DialogResult
+            Dlgr_DeleteAccionista = MessageBox.Show("¿Esta seguro que desea elimnar este registro?", "Eliminar", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Question, System.Windows.Forms.MessageBoxDefaultButton.Button2)
+            If Dlgr_DeleteAccionista = Windows.Forms.DialogResult.Yes Then
+                CType(DGVAccionistas.Rows(e.RowIndex).DataBoundItem.row, DataRow).Delete()
+            End If
         Else
+            Frm_AddModAccionista.BS_RAccionistas = BS_Accionistas
+            Dlgr_AddAccionista = Frm_AddModAccionista.ShowDialog()
+            If Dlgr_AddAccionista = Windows.Forms.DialogResult.OK Then
 
+            Else
+
+            End If
+            Frm_AddModAccionista.Dispose()
         End If
 
-        Frm_AddModAccionista.Dispose()
     End Sub
 
     Private Sub Btn_Close_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Close.Click
         Me.Close()
+    End Sub
+
+    Private Sub Btn_Save_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Save.Click
+        SaveChanges()
+        LlenaData()
+    End Sub
+    Private Sub SaveChanges()
+        Dim DataAdSavedata As New MySqlDataAdapter("", Sqlcn1)
+
+        Dim CmdInsert As New MySqlCommand("", Sqlcn1)
+        Dim CmdDelete As New MySqlCommand("", Sqlcn1)
+        Dim CmdUpdate As New MySqlCommand("", Sqlcn1)
+
+        CmdInsert.CommandType = CommandType.StoredProcedure
+        CmdInsert.CommandText = "water_keeper.WK_SP_INS_ACCIONISTA"
+
+        CmdInsert.Parameters.Add(New MySqlParameter("P_RUT_ACCIONISTA", MySqlDbType.VarChar, 12, "RUT_ACCIONISTA"))
+        CmdInsert.Parameters.Add(New MySqlParameter("P_NOMBRE_ACCIONISTA", MySqlDbType.VarChar, 45, "NOMBRE_ACCIONISTA"))
+        CmdInsert.Parameters.Add(New MySqlParameter("P_APELLIDOP_ACCIONISTA", MySqlDbType.VarChar, 45, "APELLIDOP_ACCIONISTA"))
+        CmdInsert.Parameters.Add(New MySqlParameter("P_APELLIDOM_ACCIONISTA", MySqlDbType.VarChar, 45, "APELLIDOM_ACCIONISTA"))
+        CmdInsert.Parameters.Add(New MySqlParameter("P_DIRECCION_ACCIONISTA", MySqlDbType.VarChar, 45, "DIRECCION_ACCIONISTA"))
+
+        DataAdSavedata.InsertCommand = CmdInsert
+
+        CmdDelete.CommandType = CommandType.StoredProcedure
+        CmdDelete.CommandText = "water_keeper.WK_SP_DEL_ACCIONISTA"
+
+        CmdDelete.Parameters.Add(New MySqlParameter("P_ID_ACCIONISTA", MySqlDbType.Int32, 10, "ID_ACCIONISTA"))
+
+
+        DataAdSavedata.DeleteCommand = CmdDelete
+
+        CmdUpdate.CommandType = CommandType.StoredProcedure
+        CmdUpdate.CommandText = "water_keeper.WK_SP_UPD_ACCIONISTA"
+
+        CmdUpdate.Parameters.Add(New MySqlParameter("P_ID_ACCIONISTA", MySqlDbType.Int32, 10, "ID_ACCIONISTA"))
+        CmdUpdate.Parameters.Add(New MySqlParameter("P_RUT_ACCIONISTA", MySqlDbType.VarChar, 12, "RUT_ACCIONISTA"))
+        CmdUpdate.Parameters.Add(New MySqlParameter("P_NOMBRE_ACCIONISTA", MySqlDbType.VarChar, 45, "NOMBRE_ACCIONISTA"))
+        CmdUpdate.Parameters.Add(New MySqlParameter("P_APELLIDOP_ACCIONISTA", MySqlDbType.VarChar, 45, "APELLIDOP_ACCIONISTA"))
+        CmdUpdate.Parameters.Add(New MySqlParameter("P_APELLIDOM_ACCIONISTA", MySqlDbType.VarChar, 45, "APELLIDOM_ACCIONISTA"))
+        CmdUpdate.Parameters.Add(New MySqlParameter("P_DIRECCION_ACCIONISTA", MySqlDbType.VarChar, 45, "DIRECCION_ACCIONISTA"))
+
+        DataAdSavedata.UpdateCommand = CmdUpdate
+
+        DataAdSavedata.Update(DataSetLlenado, "ACCIONISTAS")
+        Sqlcn1.Close()
+
+        MessageBox.Show("DATOS GUARDADOS")
+    End Sub
+
+    Private Sub btn_Click(ByVal Sender As Object, ByVal e As EventArgs)
+        Dim col As Integer = DGVAccionistas.CurrentCell.ColumnIndex
+        Dim row As Integer = DGVAccionistas.CurrentCell.RowIndex
+        MessageBox.Show("Button in Cell[" & col.ToString() & "," & row.ToString() + "] has been clicked")
+    End Sub
+
+    Private Sub Chk_Eliminar_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Chk_Eliminar.CheckedChanged
+        If Chk_Eliminar.Checked = True Then
+            DGVAccionistas.Columns("BCEliminar").Visible = True
+        Else
+            DGVAccionistas.Columns("BCEliminar").Visible = False
+        End If
+
     End Sub
 End Class

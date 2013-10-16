@@ -13,3 +13,4 @@ C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeper
 C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeperClient\obj\x86\Debug\WaterKeeperClient.Frm_Compuertas.resources
 C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeperClient\obj\x86\Debug\WaterKeeperClient.Frm_AddModAccionista.resources
 C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeperClient\bin\Debug\WaterKeeperClient.exe.config
+C:\Users\BLeaCH\Documents\GitHub\WaterKeeperClient\WaterKeeperClient\WaterKeeperClient\obj\x86\Debug\WaterKeeperClient.Frm_Main.resources
