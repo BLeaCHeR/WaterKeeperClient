@@ -55,7 +55,7 @@ Partial Class Frm_AddModAccionista
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(259, 264)
+        Me.GroupBox1.Size = New System.Drawing.Size(361, 304)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
@@ -67,7 +67,7 @@ Partial Class Frm_AddModAccionista
         Me.Txt_DireccionAccionista.Location = New System.Drawing.Point(9, 154)
         Me.Txt_DireccionAccionista.Multiline = True
         Me.Txt_DireccionAccionista.Name = "Txt_DireccionAccionista"
-        Me.Txt_DireccionAccionista.Size = New System.Drawing.Size(238, 98)
+        Me.Txt_DireccionAccionista.Size = New System.Drawing.Size(340, 138)
         Me.Txt_DireccionAccionista.TabIndex = 9
         '
         'Label5
@@ -85,7 +85,7 @@ Partial Class Frm_AddModAccionista
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Txt_ApellidoMAccionista.Location = New System.Drawing.Point(98, 105)
         Me.Txt_ApellidoMAccionista.Name = "Txt_ApellidoMAccionista"
-        Me.Txt_ApellidoMAccionista.Size = New System.Drawing.Size(149, 20)
+        Me.Txt_ApellidoMAccionista.Size = New System.Drawing.Size(251, 20)
         Me.Txt_ApellidoMAccionista.TabIndex = 7
         '
         'Label4
@@ -103,7 +103,7 @@ Partial Class Frm_AddModAccionista
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Txt_ApellidoPAccionista.Location = New System.Drawing.Point(98, 79)
         Me.Txt_ApellidoPAccionista.Name = "Txt_ApellidoPAccionista"
-        Me.Txt_ApellidoPAccionista.Size = New System.Drawing.Size(149, 20)
+        Me.Txt_ApellidoPAccionista.Size = New System.Drawing.Size(251, 20)
         Me.Txt_ApellidoPAccionista.TabIndex = 5
         '
         'Label3
@@ -121,7 +121,7 @@ Partial Class Frm_AddModAccionista
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Txt_NombreAccionista.Location = New System.Drawing.Point(98, 53)
         Me.Txt_NombreAccionista.Name = "Txt_NombreAccionista"
-        Me.Txt_NombreAccionista.Size = New System.Drawing.Size(149, 20)
+        Me.Txt_NombreAccionista.Size = New System.Drawing.Size(251, 20)
         Me.Txt_NombreAccionista.TabIndex = 3
         '
         'Label2
@@ -139,7 +139,7 @@ Partial Class Frm_AddModAccionista
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Txt_RutAccionista.Location = New System.Drawing.Point(98, 27)
         Me.Txt_RutAccionista.Name = "Txt_RutAccionista"
-        Me.Txt_RutAccionista.Size = New System.Drawing.Size(149, 20)
+        Me.Txt_RutAccionista.Size = New System.Drawing.Size(251, 20)
         Me.Txt_RutAccionista.TabIndex = 1
         '
         'Label1
@@ -155,7 +155,7 @@ Partial Class Frm_AddModAccionista
         '
         Me.Btn_Close.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Btn_Close.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Btn_Close.Location = New System.Drawing.Point(196, 284)
+        Me.Btn_Close.Location = New System.Drawing.Point(298, 324)
         Me.Btn_Close.Name = "Btn_Close"
         Me.Btn_Close.Size = New System.Drawing.Size(75, 23)
         Me.Btn_Close.TabIndex = 1
@@ -166,7 +166,7 @@ Partial Class Frm_AddModAccionista
         '
         Me.Btn_Aplicar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Btn_Aplicar.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.Btn_Aplicar.Location = New System.Drawing.Point(115, 284)
+        Me.Btn_Aplicar.Location = New System.Drawing.Point(217, 324)
         Me.Btn_Aplicar.Name = "Btn_Aplicar"
         Me.Btn_Aplicar.Size = New System.Drawing.Size(75, 23)
         Me.Btn_Aplicar.TabIndex = 2
@@ -177,7 +177,7 @@ Partial Class Frm_AddModAccionista
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(279, 321)
+        Me.ClientSize = New System.Drawing.Size(381, 361)
         Me.Controls.Add(Me.Btn_Aplicar)
         Me.Controls.Add(Me.Btn_Close)
         Me.Controls.Add(Me.GroupBox1)

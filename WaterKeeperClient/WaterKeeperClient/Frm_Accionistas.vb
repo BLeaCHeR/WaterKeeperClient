@@ -3,6 +3,7 @@ Public Class Frm_Accionistas
     Dim DataAdLlenaAccionistas As New MySqlDataAdapter
     Dim DataSetLlenado As New DataSet
     Dim BS_Accionistas As New BindingSource
+    Dim Str_FiltroAccionistas As String = ""
 
     Private Sub Frm_Accionistas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         DGVAccionistas.AllowUserToAddRows = False
@@ -23,11 +24,19 @@ Public Class Frm_Accionistas
         DGVBTC_Eliminar.Visible = False
         DGVBTC_Eliminar.UseColumnTextForButtonValue = True
 
+        ' Add a button column.  
+        Dim DGVBTC_Telefonos As New DataGridViewButtonColumn()
+        DGVBTC_Telefonos.HeaderText = "Telefonos"
+        DGVBTC_Telefonos.Name = "BCTelefonos"
+        DGVBTC_Telefonos.Text = "Ver"
+        DGVBTC_Telefonos.UseColumnTextForButtonValue = True
+
+        DGVAccionistas.Columns.Add(DGVBTC_Telefonos)
         DGVAccionistas.Columns.Add(DGVBTC_Eliminar)
 
         DGVAccionistas.Columns("ID_ACCIONISTA").DataPropertyName = "ID_ACCIONISTA"
         DGVAccionistas.Columns("ID_ACCIONISTA").ReadOnly = True
-        DGVAccionistas.Columns("ID_ACCIONISTA").Visible = True
+        DGVAccionistas.Columns("ID_ACCIONISTA").Visible = False
         DGVAccionistas.Columns("RUT_ACCIONISTA").DataPropertyName = "RUT_ACCIONISTA"
         DGVAccionistas.Columns("RUT_ACCIONISTA").ReadOnly = True
         DGVAccionistas.Columns("RUT_ACCIONISTA").Visible = True
@@ -64,7 +73,8 @@ Public Class Frm_Accionistas
         Dim QryLlenaAccionistas As String
 
         QryLlenaAccionistas = "SELECT ID_ACCIONISTA, RUT_ACCIONISTA, NOMBRE_ACCIONISTA, APELLIDOP_ACCIONISTA, APELLIDOM_ACCIONISTA, DIRECCION_ACCIONISTA " & vbNewLine & _
-        "FROM `WK_ACCIONISTAS`"
+        "FROM `WK_ACCIONISTAS`" & vbNewLine & _
+        "WHERE ESTADO_ACCIONISTA= 'V'"
 
         Dim CmdSelectAccionistas As New MySqlCommand(QryLlenaAccionistas.ToUpper, Sqlcn1)
 
@@ -72,6 +82,8 @@ Public Class Frm_Accionistas
         DataAdLlenaAccionistas.SelectCommand = CmdSelectAccionistas
 
         DataAdLlenaAccionistas.Fill(DataSetLlenado, "ACCIONISTAS")
+
+        Sqlcn1.Close()
     End Sub
 
     Private Sub Btn_AddAccionista_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_AddAccionista.Click
@@ -82,6 +94,7 @@ Public Class Frm_Accionistas
 
         Frm_AddModAccionista.BS_RAccionistas = BS_Accionistas
 
+        'Frm_AddModAccionista.MdiParent = Frm_Main
         Dlgr_AddAccionista = Frm_AddModAccionista.ShowDialog()
 
         If Dlgr_AddAccionista = Windows.Forms.DialogResult.OK Then
@@ -101,6 +114,11 @@ Public Class Frm_Accionistas
             If Dlgr_DeleteAccionista = Windows.Forms.DialogResult.Yes Then
                 CType(DGVAccionistas.Rows(e.RowIndex).DataBoundItem.row, DataRow).Delete()
             End If
+
+        ElseIf DGVAccionistas.Columns(e.ColumnIndex).Name = "BCTelefonos" Then
+            Frm_TelefonosAccionista.BS_RAccionistas = BS_Accionistas
+            Frm_TelefonosAccionista.ShowDialog()
+            Frm_TelefonosAccionista.Dispose()
         Else
             Frm_AddModAccionista.BS_RAccionistas = BS_Accionistas
             Dlgr_AddAccionista = Frm_AddModAccionista.ShowDialog()
@@ -166,12 +184,6 @@ Public Class Frm_Accionistas
         MessageBox.Show("DATOS GUARDADOS")
     End Sub
 
-    Private Sub btn_Click(ByVal Sender As Object, ByVal e As EventArgs)
-        Dim col As Integer = DGVAccionistas.CurrentCell.ColumnIndex
-        Dim row As Integer = DGVAccionistas.CurrentCell.RowIndex
-        MessageBox.Show("Button in Cell[" & col.ToString() & "," & row.ToString() + "] has been clicked")
-    End Sub
-
     Private Sub Chk_Eliminar_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Chk_Eliminar.CheckedChanged
         If Chk_Eliminar.Checked = True Then
             DGVAccionistas.Columns("BCEliminar").Visible = True
@@ -179,5 +191,30 @@ Public Class Frm_Accionistas
             DGVAccionistas.Columns("BCEliminar").Visible = False
         End If
 
+    End Sub
+
+    Private Sub txt_NombreAct_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_RutAccionista.TextChanged
+        FiltraAccionista()
+    End Sub
+
+    Private Sub txt_NombreAccionista_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_NombreAccionista.TextChanged
+        FiltraAccionista()
+    End Sub
+
+    Private Sub FiltraAccionista()
+        If txt_RutAccionista.Text.Count >= 1 Then
+            Str_FiltroAccionistas = "RUT_ACCIONISTA like '%" & txt_RutAccionista.Text & "%'"
+        Else
+            Str_FiltroAccionistas = ""
+        End If
+
+        If txt_NombreAccionista.Text.Count >= 1 Then
+            If Str_FiltroAccionistas.Count >= 1 Then
+                Str_FiltroAccionistas = Str_FiltroAccionistas & " AND " & "NOMBRE_ACCIONISTA + APELLIDOP_ACCIONISTA + APELLIDOM_ACCIONISTA LIKE '%" & txt_NombreAccionista.Text & "%'"
+            Else
+                Str_FiltroAccionistas = "NOMBRE_ACCIONISTA + APELLIDOP_ACCIONISTA + APELLIDOM_ACCIONISTA LIKE '%" & txt_NombreAccionista.Text & "%'"
+            End If
+        End If
+        BS_Accionistas.Filter = Str_FiltroAccionistas
     End Sub
 End Class
