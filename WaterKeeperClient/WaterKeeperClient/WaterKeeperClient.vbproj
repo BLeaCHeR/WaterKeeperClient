@@ -94,6 +94,12 @@
     <Compile Include="Frm_AddModAccionista.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frm_AddModCompuerta.Designer.vb">
+      <DependentUpon>Frm_AddModCompuerta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_AddModCompuerta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Compuertas.Designer.vb">
       <DependentUpon>Frm_Compuertas.vb</DependentUpon>
     </Compile>
@@ -145,6 +151,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Frm_AddModAccionista.resx">
       <DependentUpon>Frm_AddModAccionista.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_AddModCompuerta.resx">
+      <DependentUpon>Frm_AddModCompuerta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Compuertas.resx">
       <DependentUpon>Frm_Compuertas.vb</DependentUpon>

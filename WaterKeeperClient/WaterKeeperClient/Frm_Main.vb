@@ -8,4 +8,9 @@
         Frm_Accionistas.MdiParent = Me
         Frm_Accionistas.Show()
     End Sub
+
+    Private Sub CompuertasToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles CompuertasToolStripMenuItem.Click
+        Frm_Compuertas.MdiParent = Me
+        Frm_Compuertas.Show()
+    End Sub
 End Class

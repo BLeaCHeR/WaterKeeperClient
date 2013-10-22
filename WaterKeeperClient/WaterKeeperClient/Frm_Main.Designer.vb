@@ -25,6 +25,7 @@ Partial Class Frm_Main
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MantenedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AccionistasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CompuertasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -40,7 +41,7 @@ Partial Class Frm_Main
         '
         'MantenedoresToolStripMenuItem
         '
-        Me.MantenedoresToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccionistasToolStripMenuItem})
+        Me.MantenedoresToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccionistasToolStripMenuItem, Me.CompuertasToolStripMenuItem})
         Me.MantenedoresToolStripMenuItem.Name = "MantenedoresToolStripMenuItem"
         Me.MantenedoresToolStripMenuItem.Size = New System.Drawing.Size(88, 19)
         Me.MantenedoresToolStripMenuItem.Text = "Mantenedores"
@@ -50,6 +51,12 @@ Partial Class Frm_Main
         Me.AccionistasToolStripMenuItem.Name = "AccionistasToolStripMenuItem"
         Me.AccionistasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AccionistasToolStripMenuItem.Text = "Accionistas"
+        '
+        'CompuertasToolStripMenuItem
+        '
+        Me.CompuertasToolStripMenuItem.Name = "CompuertasToolStripMenuItem"
+        Me.CompuertasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CompuertasToolStripMenuItem.Text = "Compuertas"
         '
         'Frm_Main
         '
@@ -70,4 +77,5 @@ Partial Class Frm_Main
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents MantenedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AccionistasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CompuertasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
