@@ -13,4 +13,9 @@
         Frm_Compuertas.MdiParent = Me
         Frm_Compuertas.Show()
     End Sub
+
+    Private Sub FuentesToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles FuentesToolStripMenuItem.Click
+        Frm_Fuentes.MdiParent = Me
+        Frm_Fuentes.Show()
+    End Sub
 End Class

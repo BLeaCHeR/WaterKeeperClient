@@ -17,6 +17,14 @@ Public Class Frm_Accionistas
         DGVAccionistas.Columns.Add("DIRECCION_ACCIONISTA", "DIRECCION")
 
         ' Add a button column.  
+        Dim DGVBTC_Compuertas As New DataGridViewButtonColumn()
+        DGVBTC_Compuertas.HeaderText = "Compuertas"
+        DGVBTC_Compuertas.Name = "BCCompuertas"
+        DGVBTC_Compuertas.Text = "Asignar"
+        DGVBTC_Compuertas.Visible = True
+        DGVBTC_Compuertas.UseColumnTextForButtonValue = True
+
+        ' Add a button column.  
         Dim DGVBTC_Eliminar As New DataGridViewButtonColumn()
         DGVBTC_Eliminar.HeaderText = ""
         DGVBTC_Eliminar.Name = "BCEliminar"
@@ -32,6 +40,7 @@ Public Class Frm_Accionistas
         DGVBTC_Telefonos.UseColumnTextForButtonValue = True
 
         DGVAccionistas.Columns.Add(DGVBTC_Telefonos)
+        DGVAccionistas.Columns.Add(DGVBTC_Compuertas)
         DGVAccionistas.Columns.Add(DGVBTC_Eliminar)
 
         DGVAccionistas.Columns("ID_ACCIONISTA").DataPropertyName = "ID_ACCIONISTA"
@@ -60,6 +69,10 @@ Public Class Frm_Accionistas
         DataSetLlenado.Tables("ACCIONISTAS").Columns.Add("APELLIDOP_ACCIONISTA")
         DataSetLlenado.Tables("ACCIONISTAS").Columns.Add("APELLIDOM_ACCIONISTA")
         DataSetLlenado.Tables("ACCIONISTAS").Columns.Add("DIRECCION_ACCIONISTA")
+
+        'Dim custUnique As UniqueConstraint = New UniqueConstraint(New DataColumn() {DataSetLlenado.Tables("ACCIONISTAS").Columns("RUT_ACCIONISTA")})
+        'custUnique.ConstraintName = "testlol"
+        'DataSetLlenado.Tables("ACCIONISTAS").Constraints.Add(custUnique)
 
         BS_Accionistas.DataSource = DataSetLlenado.Tables("ACCIONISTAS")
         BS_Accionistas.Sort = "RUT_ACCIONISTA"
@@ -119,6 +132,11 @@ Public Class Frm_Accionistas
             Frm_TelefonosAccionista.BS_RAccionistas = BS_Accionistas
             Frm_TelefonosAccionista.ShowDialog()
             Frm_TelefonosAccionista.Dispose()
+
+        ElseIf DGVAccionistas.Columns(e.ColumnIndex).Name = "BCCompuertas" Then
+            Frm_CompuertasAccionista.BS_RAccionistas = BS_Accionistas
+            Frm_CompuertasAccionista.ShowDialog()
+            Frm_CompuertasAccionista.Dispose()
         Else
             Frm_AddModAccionista.BS_RAccionistas = BS_Accionistas
             Dlgr_AddAccionista = Frm_AddModAccionista.ShowDialog()
@@ -203,7 +221,7 @@ Public Class Frm_Accionistas
 
     Private Sub FiltraAccionista()
         If txt_RutAccionista.Text.Count >= 1 Then
-            Str_FiltroAccionistas = "RUT_ACCIONISTA like '%" & txt_RutAccionista.Text & "%'"
+            Str_FiltroAccionistas = "RUT_ACCIONISTA like '%" & txt_RutAccionista.Text & "'"
         Else
             Str_FiltroAccionistas = ""
         End If

@@ -106,6 +106,18 @@
     <Compile Include="Frm_Compuertas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frm_CompuertasAccionista.Designer.vb">
+      <DependentUpon>Frm_CompuertasAccionista.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_CompuertasAccionista.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Fuentes.Designer.vb">
+      <DependentUpon>Frm_Fuentes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Fuentes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Main.Designer.vb">
       <DependentUpon>Frm_Main.vb</DependentUpon>
     </Compile>
@@ -157,6 +169,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Compuertas.resx">
       <DependentUpon>Frm_Compuertas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_CompuertasAccionista.resx">
+      <DependentUpon>Frm_CompuertasAccionista.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Fuentes.resx">
+      <DependentUpon>Frm_Fuentes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Main.resx">
       <DependentUpon>Frm_Main.vb</DependentUpon>

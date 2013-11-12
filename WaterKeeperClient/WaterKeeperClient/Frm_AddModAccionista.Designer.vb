@@ -41,8 +41,8 @@ Partial Class Frm_AddModAccionista
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.Txt_DireccionAccionista)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Txt_ApellidoMAccionista)
@@ -62,8 +62,8 @@ Partial Class Frm_AddModAccionista
         'Txt_DireccionAccionista
         '
         Me.Txt_DireccionAccionista.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Txt_DireccionAccionista.Location = New System.Drawing.Point(9, 154)
         Me.Txt_DireccionAccionista.Multiline = True
         Me.Txt_DireccionAccionista.Name = "Txt_DireccionAccionista"
@@ -82,7 +82,7 @@ Partial Class Frm_AddModAccionista
         'Txt_ApellidoMAccionista
         '
         Me.Txt_ApellidoMAccionista.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Txt_ApellidoMAccionista.Location = New System.Drawing.Point(98, 105)
         Me.Txt_ApellidoMAccionista.Name = "Txt_ApellidoMAccionista"
         Me.Txt_ApellidoMAccionista.Size = New System.Drawing.Size(251, 20)
@@ -100,7 +100,7 @@ Partial Class Frm_AddModAccionista
         'Txt_ApellidoPAccionista
         '
         Me.Txt_ApellidoPAccionista.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Txt_ApellidoPAccionista.Location = New System.Drawing.Point(98, 79)
         Me.Txt_ApellidoPAccionista.Name = "Txt_ApellidoPAccionista"
         Me.Txt_ApellidoPAccionista.Size = New System.Drawing.Size(251, 20)
@@ -118,7 +118,7 @@ Partial Class Frm_AddModAccionista
         'Txt_NombreAccionista
         '
         Me.Txt_NombreAccionista.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Txt_NombreAccionista.Location = New System.Drawing.Point(98, 53)
         Me.Txt_NombreAccionista.Name = "Txt_NombreAccionista"
         Me.Txt_NombreAccionista.Size = New System.Drawing.Size(251, 20)
@@ -136,8 +136,9 @@ Partial Class Frm_AddModAccionista
         'Txt_RutAccionista
         '
         Me.Txt_RutAccionista.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Txt_RutAccionista.Location = New System.Drawing.Point(98, 27)
+        Me.Txt_RutAccionista.MaxLength = 10
         Me.Txt_RutAccionista.Name = "Txt_RutAccionista"
         Me.Txt_RutAccionista.Size = New System.Drawing.Size(251, 20)
         Me.Txt_RutAccionista.TabIndex = 1
@@ -165,7 +166,6 @@ Partial Class Frm_AddModAccionista
         'Btn_Aplicar
         '
         Me.Btn_Aplicar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Btn_Aplicar.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Btn_Aplicar.Location = New System.Drawing.Point(217, 324)
         Me.Btn_Aplicar.Name = "Btn_Aplicar"
         Me.Btn_Aplicar.Size = New System.Drawing.Size(75, 23)

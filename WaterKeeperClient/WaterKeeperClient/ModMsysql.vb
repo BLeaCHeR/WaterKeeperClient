@@ -19,4 +19,27 @@ Module ModMsysql
         strCnn = "Data Source=" & Vserver & ";Database=" & Vdatabase & ";User Id=" & Vuser & ";Password=" & Vpass & ";"
         Sqlcn1.ConnectionString = strCnn
     End Sub
+
+    Public Function RutDigito(ByVal Rut As Long) As String
+        Dim Digito As Integer
+        Dim Contador As Integer
+        Dim Multiplo As Integer
+        Dim Acumulador As Integer
+
+        Contador = 2
+        Acumulador = 0
+        While Rut <> 0
+            Multiplo = (Rut Mod 10) * Contador
+            Acumulador = Acumulador + Multiplo
+            Rut = Rut \ 10
+            Contador = Contador + 1
+            If Contador = 8 Then
+                Contador = 2
+            End If
+        End While
+        Digito = 11 - (Acumulador Mod 11)
+        RutDigito = CStr(Digito)
+        If Digito = 10 Then RutDigito = "K"
+        If Digito = 11 Then RutDigito = "0"
+    End Function
 End Module

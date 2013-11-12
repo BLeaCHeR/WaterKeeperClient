@@ -14,7 +14,7 @@ Public Class Frm_Compuertas
         DGVCompuertas.Columns.Add("NOMBRE_COMPUERTA", "NOMBRE COMPUERTA")
         DGVCompuertas.Columns.Add("ALTURA_COMPUERTA", "ALTURA")
         DGVCompuertas.Columns.Add("ANCHO_COMPUERTA", "ANCHURA")
-        DGVCompuertas.Columns.Add("UBICACION_COMPUERTA", "UBICACION")
+        'DGVCompuertas.Columns.Add("UBICACION_COMPUERTA", "UBICACION")
         DGVCompuertas.Columns.Add("ACCIONESMINUTO_COMPUERTA", "ACCIONES POR MINUTO")
         DGVCompuertas.Columns.Add("ESTADO_COMPUERTA", "ESTADO_COMPUERTA")
 
@@ -40,9 +40,9 @@ Public Class Frm_Compuertas
         DGVCompuertas.Columns("ANCHO_COMPUERTA").DataPropertyName = "ANCHO_COMPUERTA"
         DGVCompuertas.Columns("ANCHO_COMPUERTA").ReadOnly = True
         DGVCompuertas.Columns("ANCHO_COMPUERTA").Visible = True
-        DGVCompuertas.Columns("UBICACION_COMPUERTA").DataPropertyName = "UBICACION_COMPUERTA"
-        DGVCompuertas.Columns("UBICACION_COMPUERTA").ReadOnly = True
-        DGVCompuertas.Columns("UBICACION_COMPUERTA").Visible = True
+        'DGVCompuertas.Columns("UBICACION_COMPUERTA").DataPropertyName = "UBICACION_COMPUERTA"
+        'DGVCompuertas.Columns("UBICACION_COMPUERTA").ReadOnly = True
+        'DGVCompuertas.Columns("UBICACION_COMPUERTA").Visible = True
         DGVCompuertas.Columns("ACCIONESMINUTO_COMPUERTA").DataPropertyName = "ACCIONESMINUTO_COMPUERTA"
         DGVCompuertas.Columns("ACCIONESMINUTO_COMPUERTA").ReadOnly = True
         DGVCompuertas.Columns("ACCIONESMINUTO_COMPUERTA").Visible = True
@@ -55,9 +55,12 @@ Public Class Frm_Compuertas
         DataSetLlenado.Tables("COMPUERTAS").Columns.Add("NOMBRE_COMPUERTA")
         DataSetLlenado.Tables("COMPUERTAS").Columns.Add("ALTURA_COMPUERTA")
         DataSetLlenado.Tables("COMPUERTAS").Columns.Add("ANCHO_COMPUERTA")
-        DataSetLlenado.Tables("COMPUERTAS").Columns.Add("UBICACION_COMPUERTA")
+        'DataSetLlenado.Tables("COMPUERTAS").Columns.Add("UBICACION_COMPUERTA")
         DataSetLlenado.Tables("COMPUERTAS").Columns.Add("ACCIONESMINUTO_COMPUERTA")
         DataSetLlenado.Tables("COMPUERTAS").Columns.Add("ESTADO_COMPUERTA")
+
+        'Dim custUnique As UniqueConstraint = New UniqueConstraint(New DataColumn() {DataSetLlenado.Tables("COMPUERTAS").Columns("NOMBRE_COMPUERTA")})
+        'DataSetLlenado.Tables("COMPUERTAS").Constraints.Add(custUnique)
 
         BS_Compuertas.DataSource = DataSetLlenado.Tables("COMPUERTAS")
         BS_Compuertas.Sort = "NOMBRE_COMPUERTA"
@@ -74,7 +77,6 @@ Public Class Frm_Compuertas
         "'COMPUERTA01' AS `Nombre_Compuerta`," & vbNewLine & _
         "`Altura_Compuerta`," & vbNewLine & _
         "`Ancho_Compuerta`," & vbNewLine & _
-        "`Ubicacion_Compuerta`," & vbNewLine & _
         "`AccionesMinuto_Compuerta`," & vbNewLine & _
         "`Estado_Compuerta`" & vbNewLine & _
         "FROM `water_keeper`.`wk_compuertas`" & vbNewLine & _
@@ -151,7 +153,7 @@ Public Class Frm_Compuertas
         CmdInsert.Parameters.Add(New MySqlParameter("P_NOMBRE_COMPUERTA", MySqlDbType.VarChar, 45, "NOMBRE_COMPUERTA"))
         CmdInsert.Parameters.Add(New MySqlParameter("P_ALTURA_COMPUERTA", MySqlDbType.Int32, 15, "ALTURA_COMPUERTA"))
         CmdInsert.Parameters.Add(New MySqlParameter("P_ANCHO_COMPUERTA", MySqlDbType.Int32, 15, "ANCHO_COMPUERTA"))
-        CmdInsert.Parameters.Add(New MySqlParameter("P_UBICACION_COMPUERTA", MySqlDbType.VarChar, 45, "UBICACION_COMPUERTA"))
+        'CmdInsert.Parameters.Add(New MySqlParameter("P_UBICACION_COMPUERTA", MySqlDbType.VarChar, 45, "UBICACION_COMPUERTA"))
         CmdInsert.Parameters.Add(New MySqlParameter("P_ACCIONESMINUTO_COMPUERTA", MySqlDbType.Int32, 15, "ACCIONESMINUTO_COMPUERTA"))
 
         DataAdSavedata.InsertCommand = CmdInsert
@@ -171,7 +173,7 @@ Public Class Frm_Compuertas
         CmdUpdate.Parameters.Add(New MySqlParameter("P_NOMBRE_COMPUERTA", MySqlDbType.VarChar, 45, "NOMBRE_COMPUERTA"))
         CmdUpdate.Parameters.Add(New MySqlParameter("P_ALTURA_COMPUERTA", MySqlDbType.Int32, 15, "ALTURA_COMPUERTA"))
         CmdUpdate.Parameters.Add(New MySqlParameter("P_ANCHO_COMPUERTA", MySqlDbType.Int32, 15, "ANCHO_COMPUERTA"))
-        CmdUpdate.Parameters.Add(New MySqlParameter("P_UBICACION_COMPUERTA", MySqlDbType.VarChar, 45, "UBICACION_COMPUERTA"))
+        'CmdUpdate.Parameters.Add(New MySqlParameter("P_UBICACION_COMPUERTA", MySqlDbType.VarChar, 45, "UBICACION_COMPUERTA"))
         CmdUpdate.Parameters.Add(New MySqlParameter("P_ACCIONESMINUTO_COMPUERTA", MySqlDbType.Int32, 15, "ACCIONESMINUTO_COMPUERTA"))
 
         DataAdSavedata.UpdateCommand = CmdUpdate

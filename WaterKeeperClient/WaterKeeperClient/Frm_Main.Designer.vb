@@ -26,6 +26,8 @@ Partial Class Frm_Main
         Me.MantenedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AccionistasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CompuertasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FuentesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MatricesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -41,7 +43,7 @@ Partial Class Frm_Main
         '
         'MantenedoresToolStripMenuItem
         '
-        Me.MantenedoresToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccionistasToolStripMenuItem, Me.CompuertasToolStripMenuItem})
+        Me.MantenedoresToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccionistasToolStripMenuItem, Me.CompuertasToolStripMenuItem, Me.FuentesToolStripMenuItem, Me.MatricesToolStripMenuItem})
         Me.MantenedoresToolStripMenuItem.Name = "MantenedoresToolStripMenuItem"
         Me.MantenedoresToolStripMenuItem.Size = New System.Drawing.Size(88, 19)
         Me.MantenedoresToolStripMenuItem.Text = "Mantenedores"
@@ -57,6 +59,18 @@ Partial Class Frm_Main
         Me.CompuertasToolStripMenuItem.Name = "CompuertasToolStripMenuItem"
         Me.CompuertasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CompuertasToolStripMenuItem.Text = "Compuertas"
+        '
+        'FuentesToolStripMenuItem
+        '
+        Me.FuentesToolStripMenuItem.Name = "FuentesToolStripMenuItem"
+        Me.FuentesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.FuentesToolStripMenuItem.Text = "Fuentes"
+        '
+        'MatricesToolStripMenuItem
+        '
+        Me.MatricesToolStripMenuItem.Name = "MatricesToolStripMenuItem"
+        Me.MatricesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.MatricesToolStripMenuItem.Text = "Matrices"
         '
         'Frm_Main
         '
@@ -78,4 +92,6 @@ Partial Class Frm_Main
     Friend WithEvents MantenedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AccionistasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CompuertasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents FuentesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MatricesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
